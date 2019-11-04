@@ -1,0 +1,29 @@
+{% extends "main_template.html" %}
+{% block content %}
+<title>Registro | Freak Zone Store</title>
+
+<div class="container">
+            
+        <!--MAIN-->
+        <div class="col-lg-9">
+            <!--TEXTO DE PROD-->
+            <div class="card-body">
+                <h3 class="card-title">Registrarse</h3>
+                <h4>¡Bienvenido a Freak Zone!</h4>
+                <p id="error"> Porfavor Corrija las casillas marcadas en rojo</p>
+                <p id="succes"> La Información se Envió correctamente, por favor verifique si E-mail.</p>
+                <p>Por favor, ingrese sus datos.</p>
+                    <div class="tab-pane fade show active" id="usr" role="tabpanel" aria-labelledby="home-tab">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <table>
+                                {{ form.as_table}}
+                            </table>
+                            <input type="submit" value="Registrarse"> 
+                        </form>
+                       
+                    </div>
+            </div>
+        </div> 
+</div>
+{% endblock %}
